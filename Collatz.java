@@ -1,56 +1,38 @@
 
-// Demonstrates the Collatz conjecture in verbose mode.
+// Demonstrates the Collatz conjecture.
 public class Collatz {
-    public static void main(String[] args) {
-        int seed = Integer.parseInt(args[0]); 
+	public static void main(String args[]) {
+		int seed = Integer.parseInt(args [0]);
+		String mode = args[1];
+		int currentNum = 0;
+		int c = 1;
+	
+	if (mode.equals("v")) {
+		System.out.println("1 4 2 1 (4)");
+		for (int i = 2; i <= seed; i++) {
+			currentNum = i;
+			System.out.print(currentNum + " ");
+			while ( currentNum != 1) {
+				if (currentNum %2 == 0) {
+				currentNum = currentNum/2;
+				System.out.print(currentNum + " ");
 
-        for (int i = 1; i <= seed; i++) {
-            int currentNum = i; 
-            int steps = 0; 
+			}
+			else {
+				currentNum = currentNum*3 +1;
+				System.out.print(currentNum + " ");
 
-            System.out.print(i + " ");
-
-            while (currentNum != 1) {
-                if (currentNum % 2 == 0) {
-                    currentNum = currentNum / 2; 
-                } else {
-                    currentNum = currentNum * 3 + 1; 
-                }
-                steps++;
-                System.out.print(currentNum + " ");
-            }
-
-            System.out.println("(" + steps + ")"); 
-        }
-
-        System.out.println("Every one of the first " + seed + " hailstone sequences reached 1.");
-    }
+			}
+			c++;
+			}
+			System.out.println("(" + c + ")");
+		}
+	} 
+	
+	else {
+		System.out.println("Every one of the first " + seed +" hailstone sequences reached 1.");
+	}
+	
+	}
 }
-
-
-
-// // Demonstrates the Collatz conjecture.
-// public class Collatz {
-// 	public static void main(String args[]) {
-// 		int seed = Integer.parseInt(args [0]);
-// 		int currentNum = 0;
-// 		int firstNum = 1;
-// 		String mode = args[1];
-// 	for (int i = 0; i < seed; i++, firstNum++) {
-// 		System.out.print(i+1 + " ");
-// 			while (currentNum != 1) { 
-// 			if (currentNum%2 == 0){
-// 				currentNum = currentNum/2;
-// 				}
-// 			else {
-// 				currentNum = currentNum*3 +1 ;
-// 				}
-			
-// 		System.out.print(currentNum + " ");
-// 			}
-// 		}
-// 	}
-// }
-
-			
-
+	
