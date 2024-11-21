@@ -1,6 +1,18 @@
-// Computes an approximation of PI.
 public class CalcPi {
-	public static void main(String [] args) { 
-	    // Replace this comment with your code
-	}
+    public static void main(String[] args) {
+        int numDigits = Integer.parseInt(args[0]); 
+        double newPI = 0.0; 
+        
+    
+        for (int i = 1, c = 1; c <= numDigits; i += 2, c++) {
+            if (c % 2 != 0) {
+                newPI += 1.0 / i; 
+            } else {
+                newPI -= 1.0 / i; 
+            }
+        }
+
+        System.out.println("pi according to Java: " + Math.PI);
+        System.out.println("pi, approximated:     " + (newPI * 4.0));
+    }
 }
