@@ -7,7 +7,7 @@ public class Collatz {
 
         for (int i = 1; i <= seed; i++) {
             int currentNum = i; // Start each sequence with the current seed
-            int steps = 0; // Count the steps to reach 1
+            int steps = 0; 
 
             if (mode.equals("v")) { // Verbose mode
                 System.out.print(i + " "); // Print the seed at the start
