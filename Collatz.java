@@ -26,6 +26,7 @@ public class Collatz {
 			c++;
 			}
 			System.out.println("(" + c + ")");
+			c = 1;
 		}
 	} 
 	
